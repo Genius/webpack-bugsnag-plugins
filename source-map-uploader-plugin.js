@@ -90,7 +90,7 @@ class BugsnagSourceMapUploaderPlugin {
       parallel(sourceMaps.map(sm => cb => {
         console.log(`${LOG_PREFIX} uploading sourcemap for "${sm.url}"`)
         upload(this.getUploadOpts(sm), cb)
-      }), 10, cb)
+      }), 1, cb)
     }
 
     if (compiler.hooks) {
